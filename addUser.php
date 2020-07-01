@@ -53,7 +53,7 @@ if ($verifyUser_name && $verpass){
 	
 	$sql= "INSERT INTO user(user_name,	email,first_name,last_name,	password ,nationality, user_type  ,q_id,answer) VALUES (?,?,?,?,?,?,?,?,?)";
 	$create= $connect -> prepare($sql);
-	$verifyadd=$create->execute([$UserName,$email,$last_name,$first_name,$password,$nationalty,$usertype,$q_id,$answer ]);
+	$verifyadd=$create->execute([$UserName,$email,$first_name,$last_name,$password,$nationalty,$usertype,$q_id,$answer ]);
 	if($verifyadd == 1)
 		echo "1";
 	
