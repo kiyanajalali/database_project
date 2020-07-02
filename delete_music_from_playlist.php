@@ -10,3 +10,4 @@ $search ->execute([$music_id,$playlist_id]);
 
 echo 'delete music';
     
+?>
