@@ -7,8 +7,9 @@
     $user_id=$_POST['user_id'];
     $playlist_id=$_POST['playlist_id'];
     $date = date("Y-m-d");
+    
 
-    $query = "SELECT user_id from play_list WHERE playlist_id=? ";
+    $query = "SELECT user_id , access_type from play_list WHERE playlist_id=? ";
     $search= $connect -> prepare($query);
     $search ->execute([$playlist_id]);
     $temp = $search->fetchAll(PDO::FETCH_ASSOC);
@@ -17,7 +18,8 @@
     for($i=0;$i<sizeof($temp);$i++){
 
         if($temp[$i]['user_id']==$user_id)
-            $access = true;
+            if( $temp[$i]['access_type']= 1 || $temp[$i]['access_type']=2)
+                $access = true;
     }
 
     if($access){
