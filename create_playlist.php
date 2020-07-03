@@ -9,7 +9,23 @@
     $temp = $search->fetchAll(PDO::FETCH_ASSOC)[0]['COUNT(*)'];
     $access_type=$_POST['access_type'];
 
-    if($temp<5){
+    $date = date("Y-m-d");
+
+    $pre=false;
+
+    $sql="SELECT* FROM premium_listener where user_id=?";
+    $search= $connect -> prepare($sql);
+    $search ->execute([$user_id]);
+    $tempppp = $search->fetchAll(PDO::FETCH_ASSOC);
+    $j=0;
+    for($j=0;$j<sizeof($tempppp);$j++){
+        if($tempppp[$j]['expiretion_time']>$date){
+            $pre=true;    
+
+        }
+    }
+
+    if($temp<5 || $pre){
         $sql ="SELECT MAX(playlist_id) FROM play_list ";
         $search= $connect -> prepare($sql);
         $search ->execute([]);
