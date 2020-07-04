@@ -22,8 +22,7 @@
 
         }
     }
-    // echo var_dump($temppp);
-    // echo var_dump($pre);
+
 
     if($temppp<=5 || $pre){
     
