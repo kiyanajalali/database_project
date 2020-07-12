@@ -50,10 +50,10 @@ if($search->fetchAll(PDO::FETCH_ASSOC)==null)
 
 
 if ($verifyUser_name && $verpass){
-	
+	$hashedPass= md5($password."11");
 	$sql= "INSERT INTO user(user_name,	email,first_name,last_name,	password ,nationality, user_type  ,q_id,answer) VALUES (?,?,?,?,?,?,?,?,?)";
 	$create= $connect -> prepare($sql);
-	$verifyadd=$create->execute([$UserName,$email,$first_name,$last_name,$password,$nationalty,$usertype,$q_id,$answer ]);
+	$verifyadd=$create->execute([$UserName,$email,$first_name,$last_name,$hashedPass,$nationalty,$usertype,$q_id,$answer ]);
 	if($verifyadd == 1)
 		echo "1";
 	

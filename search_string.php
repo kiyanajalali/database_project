@@ -51,29 +51,4 @@ $result['music']=$music;
 $json_res=json_encode($result);
 
 echo $json_res;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+?>
