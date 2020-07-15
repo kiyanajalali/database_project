@@ -16,12 +16,8 @@ echo"<h1>Join Multiple Tables value</h1>";
 echo"<hr/>";
 echo"<table border='1'>
 <tr>
-<th>date </th>
-<th>duration </th>
-<th>album_id </th>
-<th>title </th>
-<th>music_id </th>
-<th>user_id </th>
+<th>question_id </th>
+<th>question </th>
 </tr>";
 
 while($row = $search->fetch(PDO::FETCH_BOTH) ){
