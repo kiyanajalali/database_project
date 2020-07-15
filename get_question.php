@@ -11,11 +11,35 @@
 
     $search ->execute();
 
-    $question = $search->fetchAll(PDO::FETCH_ASSOC);
+    echo"<center>";
+echo"<h1>Join Multiple Tables value</h1>";
+echo"<hr/>";
+echo"<table border='1'>
+<tr>
+<th>date </th>
+<th>duration </th>
+<th>album_id </th>
+<th>title </th>
+<th>music_id </th>
+<th>user_id </th>
+</tr>";
 
-    $json_res=json_encode($question);
+while($row = $search->fetch(PDO::FETCH_BOTH) ){
+    echo"<tr>";
+    echo"<td>".$row['question_id']."</td>";
+    echo"<td>".$row['question']."</td>";
+    echo"</tr>";
 
-    echo $json_res;
+}
+echo "</table>";
+echo "</center>";
+
+
+    // $question = $search->fetchAll(PDO::FETCH_ASSOC);
+
+    // $json_res=json_encode($question);
+
+    // echo $json_res;
 
 
     ?>

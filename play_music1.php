@@ -7,12 +7,26 @@ $query = " SELECT *   FROM  music ";
 $search= $connect -> prepare($query);
 
 $search ->execute();
+echo"<center>";
+echo"<h1>show popular music</h1>";
+echo"<table border='1'>
+<tr>
+<th>music_id </th>
+</tr>";
 
-$music_id = $search->fetchAll(PDO::FETCH_ASSOC);
+while($row = $search->fetch(PDO::FETCH_BOTH) ){
+    echo"<tr>";
+    echo"<td>".$row['music_id']."</td>";
+    echo"</tr>";
 
-$json_res=json_encode($music_id);
+}
+echo "</table>";
+echo "</center>";
+// $music_id = $search->fetchAll(PDO::FETCH_ASSOC);
 
-echo $json_res;
+// $json_res=json_encode($music_id);
+
+// echo $json_res;
 
 
 ?>
