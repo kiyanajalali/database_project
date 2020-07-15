@@ -21,6 +21,7 @@ $json_res=json_encode($report);
 
 echo $json_res;
 }
+
 else{
     echo " you are not admin "
 }
