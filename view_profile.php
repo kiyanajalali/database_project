@@ -65,11 +65,13 @@ $search ->execute([$playList[sizeof($playList)-1]['playlist_id']]);
 $user[0]['last_update'] = $search->fetchAll(PDO::FETCH_ASSOC)[0]['date'];
 
 
+$sql="SELECT title from music where music_id in (SELECT album_id, music_id, COUNT(music_id) AS cnt  from play GROUP BY music_id
+ORDER BY cnt DESC LIMIT 1 where album_id in (SELECT album_id from album where user_id=?) ) ";
+$search= $connect -> prepare($sql);
+$search ->execute([$user_id]);
+$user[0]['popular_gener'] = $search->fetchAll(PDO::FETCH_ASSOC)[0]['title'];
+
 
 
 $json_res=json_encode($user);
-
 echo $json_res;
-
-
-
