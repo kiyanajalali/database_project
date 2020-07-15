@@ -2,7 +2,7 @@
 $server = "localhost";
 $username = "root";
 $password = "";
-$dbname = "spotify3";
+$dbname = "spotify";
 $dsn = "mysql:host=$server;dbname=$dbname";
 try{
     $connect = new PDO($dsn,$username,$password);
