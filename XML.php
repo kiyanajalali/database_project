@@ -93,17 +93,17 @@
 
 
 <p>
-<label>user_id:</label>
+<label>UserName:</label>
 <input type="text" id="UserName" name="UserName"/>
 </p>
 
 <p>
-<label>user_id:</label>
+<label>password:</label>
 <input type="text" id="password" name="password"/>
 </p>
 
 <p>
-<label>user_id:</label>
+<label>user_type:</label>
 <input type="text" id="user_type" name="user_type"/>
 </p>
 <p>
@@ -534,6 +534,11 @@
 <input type="text" id="music_id" name="music_id"/>
 </p>
 
+<p>
+<label>album_id:</label>
+<input type="text" id="album_id" name="album_id"/>
+</p>
+
 <input type="submit" id="btn" value="delete_music_from_album"/>
 </p>
 </form>
@@ -594,6 +599,25 @@
 <input type="text" id="user_id" name="user_id"/>
 </p>
 <input type="submit" id="btn" value="f_get_inf_artist"/>
+</p>
+</form>
+</div>
+
+<div id="frm">
+
+<form action="findFollowerArtist.php" method="POST">
+
+<p>
+<label>user_id:</label>
+<input type="text" id="user_id" name="user_id"/>
+</p>
+
+<p>
+<label>music_id:</label>
+<input type="text" id="music_id" name="music_id"/>
+</p>
+
+<input type="submit" id="btn" value="findFollowerArtist"/>
 </p>
 </form>
 </div>
